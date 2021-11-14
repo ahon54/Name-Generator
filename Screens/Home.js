@@ -5,10 +5,13 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   background-color: #5BCFFB;
-  color: black;
+  color: white;
   font-size: 20px;
-  padding: 10px 60px;
-  margin: 10px 0px;
+  padding: 40px 60px;
+  border-radius: 15px;
+  margin: 40px 0px;
+  border: none;
+  font-weight: bold;
 `
 const Home = () => {
   const handleMtoF = () => {
