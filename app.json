@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "This project will be a React mobile app, where users can get name suggestions if they decide to transition. This will be for both MtF and FtM usage and will use either an API or machine learning."
   }
 }
