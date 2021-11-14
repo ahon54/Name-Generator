@@ -1,12 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import React from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const LetterSelection = () => {
   return (
-    <View style={styles.container}>
+    <View>
       <Text>LetterSelection</Text>
       <StatusBar style="auto" />
+
+      <Button 
+        title= "Next Page"
+        onPress={() => navigation.navigate('Names')}>
+      </Button>
     </View>
   );
 }

@@ -2,6 +2,8 @@ import React from "react";
 import { StyleSheet, Text, View, Button} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styled from 'styled-components';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // const btton = styled.Button`
 //   background-color: #5BCFFB;

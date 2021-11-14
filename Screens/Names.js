@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 const Names = () => {
   return (
-    <View style={styles.container}>
+    <View>
       <Text>Names</Text>
       <StatusBar style="auto" />
     </View>
