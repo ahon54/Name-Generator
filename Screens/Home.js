@@ -2,6 +2,8 @@ import React from "react";
 import { StyleSheet, Text, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styled from 'styled-components';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Button = styled.Button`
   background-color: #5BCFFB;
@@ -10,7 +12,7 @@ const Button = styled.Button`
   padding: 10px 60px;
   margin: 10px 0px;
 `
-const Home = () => {
+const Home = ({ navigation }) => {
   const handleMtoF = () => {
     console.log("Male to Female");
   }
