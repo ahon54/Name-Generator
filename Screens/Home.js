@@ -1,9 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styled from 'styled-components';
 
-const Button = styled.button`
+const Button = styled.Button`
   background-color: #5BCFFB;
   color: black;
   font-size: 20px;
@@ -20,17 +20,26 @@ const Home = () => {
   const handleNeutral = () => {
     console.log("Gender Neutral");
   }
-
   return (
     <View style={styles.container}>
-      <Button onClick={() => handleMtoF()}>
+      <Button
+      title="Male to Female Names" 
+      onClick={() => handleMtoF()}>
         Male to Female Names
       </Button>
-      <Button onClick={() => handleFtoM()}>
+      <Button 
+      title= "Female to Male Names"
+      onClick={() => handleFtoM()}>
         Female to Male Names
       </Button>
-      <Button onClick={() => handleNeutral()}>
+      <Button 
+      title= "Gender Neutral Names"
+      onClick={() => handleNeutral()}>
         Gender Neutral Names
+      </Button>
+      <Button 
+      title= "Next Page"
+      onPress={() => navigation.navigate('LetterSelection')}>
       </Button>
       <StatusBar style="auto" />
     </View>
