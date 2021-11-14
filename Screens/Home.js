@@ -1,15 +1,20 @@
 import React from "react";
-import { StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View, Button} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styled from 'styled-components';
 
-const Button = styled.Button`
-  background-color: #5BCFFB;
-  color: black;
-  font-size: 20px;
-  padding: 10px 60px;
-  margin: 10px 0px;
-`
+// const btton = styled.Button`
+//   background-color: #5BCFFB;
+//   color: white;
+//   font-size: 20px;
+//   padding: 40px 60px;
+//   border-radius: 15px;
+//   margin: 50px 0px;
+//   border: none;
+//   font-weight: bold;
+//   width: 100px;
+// `
+
 const Home = () => {
   const handleMtoF = () => {
     console.log("Male to Female");
@@ -22,22 +27,22 @@ const Home = () => {
   }
   return (
     <View style={styles.container}>
-      <Button
+      <Button style={styles.button} 
       title="Male to Female Names" 
       onClick={() => handleMtoF()}>
-        Male to Female Names
       </Button>
       <Button 
+      style={styles.button}
       title= "Female to Male Names"
       onClick={() => handleFtoM()}>
-        Female to Male Names
       </Button>
       <Button 
+      style={styles.button}
       title= "Gender Neutral Names"
       onClick={() => handleNeutral()}>
-        Gender Neutral Names
       </Button>
       <Button 
+      style={styles.button}
       title= "Next Page"
       onPress={() => navigation.navigate('LetterSelection')}>
       </Button>
@@ -52,6 +57,15 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    button: {
+      backgroundColor: '#5BCFFB',
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
     },
   });
 
