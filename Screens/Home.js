@@ -12,12 +12,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 //   padding: 10px 60px;
 //   margin: 10px 0px;
 // `
+
 const Home = ({ navigation }) => {
   const handleMtoF = () => {
-    console.log("Male to Female");
+    navigation.navigate('Middle')
   }
   const handleFtoM = () => {
-    console.log("Female to Male");
+    navigation.navigate('Middle')
   }
   const handleNeutral = () => {
     console.log("Gender Neutral");
@@ -42,11 +43,11 @@ const Home = ({ navigation }) => {
         <Text style={styles.title}>Gender Neutral Names </Text>
       </TouchableOpacity>
 
-      <Button 
+      {/* <Button 
       title= "Next Page"
       color="#5BCFFB"
       onPress={() => navigation.navigate('LetterSelection')}>
-      </Button>
+      </Button> */}
       <StatusBar style="auto" />
     </View>
   );

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { TextInput, SectionList, StyleSheet, Text, View } from 'react-native';
 const names = ["Liam", "Noah", "William", "James", "Oliver", "Benjamin", "Elijah", "Lucas", "Mason", "Logan", "Alexander", "Ethan", "Jacob", "Michael", "Daniel", "Henry", "Jackson", "Sebastian", "Aiden", "Matthew", "Samuel", "David", "Joseph", "Carter", "Owen", "Wyatt", "John", "Jack", "Luke", "Jayden", "Dylan", "Grayson", "Levi"]
 
-
 const Names = () => {
   const [text, setText] = useState('');
 

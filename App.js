@@ -15,6 +15,7 @@ export default function App() {
     <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Middle" component={Middle} />
       <Stack.Screen name="LetterSelection" component={LetterSelection} />
       <Stack.Screen 
       name="Names" 
