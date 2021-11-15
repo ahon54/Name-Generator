@@ -2,10 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
 import { TextInput, SectionList, StyleSheet, Text, View } from 'react-native';
 const names = ["Liam", "Noah", "William", "James", "Oliver", "Benjamin", "Elijah", "Lucas", "Mason", "Logan", "Alexander", "Ethan", "Jacob", "Michael", "Daniel", "Henry", "Jackson", "Sebastian", "Aiden", "Matthew", "Samuel", "David", "Joseph", "Carter", "Owen", "Wyatt", "John", "Jack", "Luke", "Jayden", "Dylan", "Grayson", "Levi"]
+import  Sorting  from '../functions/sorting';
 
 
 const Names = () => {
   const [text, setText] = useState('');
+  const [name] = useState("David");
+  const [mode] = useState("MtF");
 
   return (
     <View style={styles.container}>
@@ -23,6 +26,8 @@ const Names = () => {
         onChangeText={text => setText(text)}
       />
       <StatusBar style="auto"/>
+      <Sorting name={name} mode={mode}/>
+
     </View>
   );
 }
