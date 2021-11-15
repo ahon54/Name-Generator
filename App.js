@@ -15,9 +15,42 @@ export default function App() {
   return (
     <NavigationContainer>
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Middle" component={Middle} />
-      <Stack.Screen name="LetterSelection" component={LetterSelection} />
+      <Stack.Screen 
+        name="Home" 
+        component={Home}
+        options={{
+          headerStyle: {
+            backgroundColor: '#F5ABB9',
+          },
+          headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+          },
+      }}  />
+      <Stack.Screen 
+        name="Middle" 
+        component={Middle}
+        options={{
+          headerStyle: {
+            backgroundColor: '#F5ABB9',
+          },
+          headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+          },
+      }} />
+      <Stack.Screen 
+        name="LetterSelection" 
+        component={LetterSelection}
+        options={{
+          headerStyle: {
+            backgroundColor: '#F5ABB9',
+          },
+          headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+          },
+        }} />
       <Stack.Screen 
       name="Names" 
       component={Names} 
