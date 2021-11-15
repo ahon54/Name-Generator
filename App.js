@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from '@react-navigation/native';
 
 import Home from './Screens/Home';
+import LetterList from './Screens/LetterList';
 import LetterSelection from './Screens/LetterSelection';
 import Names from './Screens/Names';
 import Middle from './Screens/Middle';

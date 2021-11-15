@@ -17,7 +17,7 @@ const LetterSelection = ({ navigation }) => {
       <SafeAreaView style={styles.safeAreaContainer}>
       <ScrollView style={styles.scrollView}>  
       <View style={styles.innerContainer}>
-      
+
       <TouchableOpacity style={styles.button}>
        <Text style={styles.title}> A </Text>
       </TouchableOpacity>

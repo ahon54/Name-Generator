@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styled, { withTheme } from 'styled-components';
@@ -45,12 +45,6 @@ const Home = ({ navigation }) => {
       onPress={handleNeutral}>
         <Text style={styles.title}>Gender Neutral Names </Text>
       </TouchableOpacity>
-
-      <Button 
-      title= "Next Page"
-      color="#5BCFFB"
-      onPress={() => navigation.navigate('LetterSelection')}>
-      </Button> 
       <StatusBar style="auto" />
     </View>
   );
