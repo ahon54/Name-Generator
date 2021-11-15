@@ -8,6 +8,7 @@ import Home from './Screens/Home';
 import LetterList from './Screens/LetterList';
 import LetterSelection from './Screens/LetterSelection';
 import Names from './Screens/Names';
+import Middle from './Screens/Middle';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,10 +27,10 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
           },
-        }} />
-        <Stack.Screen 
-        name="LetterList" 
-        component={LetterList}
+      }}  />
+      <Stack.Screen 
+        name="Middle" 
+        component={Middle}
         options={{
           headerStyle: {
             backgroundColor: '#F5ABB9',
@@ -38,7 +39,7 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
           },
-        }} />
+      }} />
       <Stack.Screen 
         name="LetterSelection" 
         component={LetterSelection}
@@ -50,7 +51,7 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
           },
-        }}/>
+        }} />
       <Stack.Screen 
       name="Names" 
       component={Names} 

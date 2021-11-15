@@ -5,48 +5,52 @@ import styled, { withTheme } from 'styled-components';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+// const Button = styled.Button`
+//   background-color: #5BCFFB;
+//   color: black;
+//   font-size: 20px;
+//   padding: 10px 60px;
+//   margin: 10px 0px;
+// `
 
 const Home = ({ navigation }) => {
+  const handleMtoF = () => {
+    navigation.navigate('Middle')
+  };
 
-  const [mode, setMode] = useState('');
-
-  function handleMtoF() {
-    console.log("Male to Female");
-    mode = 'MtF';
-    setMode('MtF');
-  }
   const handleFtoM = () => {
-    console.log("Female to Male");
-    setMode = 'FtM';
-  }
+    navigation.navigate('Middle')
+  };
+
   const handleNeutral = () => {
-    console.log("Gender Neutral");
-  }
+    navigation.navigate('Middle')
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>Welcome to Name Selector</Text>
       <TouchableOpacity
       style={styles.button}
-      onPress={() => {e => handleMtoF(e); navigation.navigate('LetterList')}}>
+      onPress={handleMtoF}>
         <Text style={styles.title}>Male To Female Names </Text>
       </TouchableOpacity>
       <TouchableOpacity
       style={styles.button}
-      onPress={() => {handleFtoM(); navigation.navigate('LetterList')}}>
+      onPress={handleFtoM}>
         <Text style={styles.title}>Female To Male Names </Text>
       </TouchableOpacity>
 
       <TouchableOpacity
       style={styles.button}
-      onPress={() => {handleNeutral(); navigation.navigate('LetterList')}}>
+      onPress={handleNeutral}>
         <Text style={styles.title}>Gender Neutral Names </Text>
       </TouchableOpacity>
 
       <Button 
       title= "Next Page"
       color="#5BCFFB"
-      onPress={() => {navigation.navigate('LetterList'); }}>
-      </Button>
+      onPress={() => navigation.navigate('LetterSelection')}>
+      </Button> 
       <StatusBar style="auto" />
     </View>
   );
