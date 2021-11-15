@@ -45,12 +45,6 @@ const Home = ({ navigation }) => {
       onPress={handleNeutral}>
         <Text style={styles.title}>Gender Neutral Names </Text>
       </TouchableOpacity>
-
-      <Button 
-      title= "Next Page"
-      color="#5BCFFB"
-      onPress={() => navigation.navigate('LetterSelection')}>
-      </Button> 
       <StatusBar style="auto" />
     </View>
   );
