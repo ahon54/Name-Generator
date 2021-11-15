@@ -13,15 +13,15 @@ const LetterSelection = ({ navigation }) => {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.writeLetterWrapper}
     >
-    {/* <Button 
-      title= "Next Page"
-      onPress={() => navigation.navigate('Names')}>
-    </Button> */}
       <StatusBar style="auto" />  
       <SafeAreaView style={styles.safeAreaContainer}>
       <ScrollView style={styles.scrollView}>  
       <View style={styles.innerContainer}>
-      
+      <Button 
+      title= "Next Page"
+      onPress={() => navigation.navigate('Names')}>
+    </Button>
+    
       <TouchableOpacity style={styles.button}>
        <Text style={styles.title}> A </Text>
       </TouchableOpacity>

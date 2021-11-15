@@ -1,23 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styled, { withTheme } from 'styled-components';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// const Button = styled.Button`
-//   background-color: #5BCFFB;
-//   color: black;
-//   font-size: 20px;
-//   padding: 10px 60px;
-//   margin: 10px 0px;
-// `
+
 const Home = ({ navigation }) => {
-  const handleMtoF = () => {
+
+  const [mode, setMode] = useState('');
+
+  function handleMtoF() {
     console.log("Male to Female");
+    mode = 'MtF';
+    setMode('MtF');
   }
   const handleFtoM = () => {
     console.log("Female to Male");
+    setMode = 'FtM';
   }
   const handleNeutral = () => {
     console.log("Gender Neutral");
@@ -27,25 +27,25 @@ const Home = ({ navigation }) => {
       <Text style={styles.welcome}>Welcome to Name Selector</Text>
       <TouchableOpacity
       style={styles.button}
-      onClick={() => handleMtoF()}>
+      onPress={() => {e => handleMtoF(e); navigation.navigate('LetterList')}}>
         <Text style={styles.title}>Male To Female Names </Text>
       </TouchableOpacity>
       <TouchableOpacity
       style={styles.button}
-      onClick={() => handleFtoM()}>
+      onPress={() => {handleFtoM(); navigation.navigate('LetterList')}}>
         <Text style={styles.title}>Female To Male Names </Text>
       </TouchableOpacity>
 
       <TouchableOpacity
       style={styles.button}
-      onClick={() => handleNeutral()}>
+      onPress={() => {handleNeutral(); navigation.navigate('LetterList')}}>
         <Text style={styles.title}>Gender Neutral Names </Text>
       </TouchableOpacity>
 
       <Button 
       title= "Next Page"
       color="#5BCFFB"
-      onPress={() => navigation.navigate('LetterSelection')}>
+      onPress={() => {navigation.navigate('LetterList'); }}>
       </Button>
       <StatusBar style="auto" />
     </View>
