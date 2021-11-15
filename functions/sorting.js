@@ -124,6 +124,6 @@ export default function Sorting(props) {
         result = result.slice(0, 10);
         console.log(result);
     }
-    return <Button title="lol"> </Button>
+    return null
 }
 
