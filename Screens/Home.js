@@ -14,40 +14,31 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // `
 
 const Home = ({ navigation }) => {
-  const handleMtoF = () => {
-    navigation.navigate('Middle')
-  }
-  const handleFtoM = () => {
-    navigation.navigate('Middle')
-  }
-  const handleNeutral = () => {
-    console.log("Gender Neutral");
-  }
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>Welcome to Name Selector</Text>
       <TouchableOpacity
       style={styles.button}
-      onClick={() => handleMtoF()}>
+      onPress={() => navigation.navigate('Middle')}>
         <Text style={styles.title}>Male To Female Names </Text>
       </TouchableOpacity>
       <TouchableOpacity
       style={styles.button}
-      onClick={() => handleFtoM()}>
+      onPress={() => navigation.navigate('Middle')}>
         <Text style={styles.title}>Female To Male Names </Text>
       </TouchableOpacity>
 
       <TouchableOpacity
       style={styles.button}
-      onClick={() => handleNeutral()}>
+      onPress={() => navigation.navigate('LetterSelection')}>
         <Text style={styles.title}>Gender Neutral Names </Text>
       </TouchableOpacity>
 
-      {/* <Button 
+      <Button 
       title= "Next Page"
       color="#5BCFFB"
       onPress={() => navigation.navigate('LetterSelection')}>
-      </Button> */}
+      </Button> 
       <StatusBar style="auto" />
     </View>
   );

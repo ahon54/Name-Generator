@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Home from './Screens/Home';
 import LetterSelection from './Screens/LetterSelection';
 import Names from './Screens/Names';
+import Middle from './Screens/Middle';
 
 const Stack = createNativeStackNavigator();
 

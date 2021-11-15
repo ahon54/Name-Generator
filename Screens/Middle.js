@@ -15,12 +15,12 @@ const Middle = ({navigation}) => {
     <View style={styles.container}>
       <TouchableOpacity
       style={styles.button}
-      onClick={() => handleAll()}>
-        <Text style={styles.title}>All Names </Text>
+      onPress={() => navigation.navigate('LetterSelection')}>
+        <Text style={styles.title}>List of All Names </Text>
       </TouchableOpacity>
       <TouchableOpacity
       style={styles.button}
-      onClick={() => handleSimilar()}>
+      onPress={() => navigation.navigate('Names')}>
         <Text style={styles.title}>Search by Name Similarity </Text>
       </TouchableOpacity>
       <StatusBar style="auto"/>
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Names;
+export default Middle;
