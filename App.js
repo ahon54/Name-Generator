@@ -16,7 +16,18 @@ export default function App() {
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="LetterSelection" component={LetterSelection} />
-      <Stack.Screen name="Names" component={Names} />
+      <Stack.Screen 
+      name="Names" 
+      component={Names} 
+      options={{
+        headerStyle: {
+          backgroundColor: '#F5ABB9',
+        },
+        headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+        },
+      }}/>
     </Stack.Navigator>
   </NavigationContainer>
   );

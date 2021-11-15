@@ -1,23 +1,18 @@
 import React from "react";
-import { StyleSheet, Text, View, Button} from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// const btton = styled.Button`
+// const Button = styled.Button`
 //   background-color: #5BCFFB;
-//   color: white;
+//   color: black;
 //   font-size: 20px;
-//   padding: 40px 60px;
-//   border-radius: 15px;
-//   margin: 50px 0px;
-//   border: none;
-//   font-weight: bold;
-//   width: 100px;
+//   padding: 10px 60px;
+//   margin: 10px 0px;
 // `
-
-const Home = () => {
+const Home = ({ navigation }) => {
   const handleMtoF = () => {
     console.log("Male to Female");
   }
@@ -29,23 +24,27 @@ const Home = () => {
   }
   return (
     <View style={styles.container}>
-      <Button style={styles.button} 
-      title="Male to Female Names" 
+      <Text style={styles.welcome}>Welcome to Name Selector</Text>
+      <TouchableOpacity
+      style={styles.button}
       onClick={() => handleMtoF()}>
-      </Button>
-      <Button 
+        <Text style={styles.title}>Male To Female Names </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
       style={styles.button}
-      title= "Female to Male Names"
       onClick={() => handleFtoM()}>
-      </Button>
-      <Button 
+        <Text style={styles.title}>Female To Male Names </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
       style={styles.button}
-      title= "Gender Neutral Names"
       onClick={() => handleNeutral()}>
-      </Button>
+        <Text style={styles.title}>Gender Neutral Names </Text>
+      </TouchableOpacity>
+
       <Button 
-      style={styles.button}
       title= "Next Page"
+      color="#5BCFFB"
       onPress={() => navigation.navigate('LetterSelection')}>
       </Button>
       <StatusBar style="auto" />
@@ -62,12 +61,18 @@ const styles = StyleSheet.create({
     },
     button: {
       backgroundColor: '#5BCFFB',
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingVertical: 12,
-      paddingHorizontal: 32,
-      borderRadius: 4,
-      elevation: 3,
+      padding: 20,
+      margin: 10,
+      borderRadius: 15,
+    },
+    title: {
+      color: 'white',
+      fontSize: 20,
+    },
+    welcome: {
+      fontSize: 30,
+      fontWeight: 'bold',
+      padding: 20,
     },
   });
 

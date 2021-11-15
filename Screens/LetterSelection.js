@@ -4,7 +4,9 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const LetterSelection = () => {
+import LetterButton from '../components/LetterButton';
+
+const LetterSelection = ({ navigation }) => {
   return (
     <View>
       <Text>LetterSelection</Text>
