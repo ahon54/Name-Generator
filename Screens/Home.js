@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styled, { withTheme } from 'styled-components';
@@ -15,15 +15,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Home = ({ navigation }) => {
   const handleMtoF = () => {
-    navigation.navigate('Middle')
+    navigation.navigate('Middle', {mode: 'MtF'})
   };
 
   const handleFtoM = () => {
-    navigation.navigate('Middle')
+    navigation.navigate('Middle', {mode: 'FtM'})
   };
 
   const handleNeutral = () => {
-    navigation.navigate('Middle')
+    navigation.navigate('Middle', {mode: 'Neutral'})
   };
 
   return (
@@ -45,6 +45,12 @@ const Home = ({ navigation }) => {
       onPress={handleNeutral}>
         <Text style={styles.title}>Gender Neutral Names </Text>
       </TouchableOpacity>
+
+      {/* <Button 
+      title= "Next Page"
+      color="#5BCFFB"
+      onPress={() => navigation.navigate('LetterSelection')}>
+      </Button> */}
       <StatusBar style="auto" />
     </View>
   );

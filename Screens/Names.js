@@ -6,28 +6,41 @@ import  Sorting  from '../functions/sorting';
 import female_names from '../data/girl_names_2018.json';
 
 
-const Names = () => {
+const Names = ({ navigation, route }) => {
+  console.log(route);
+  const params = route.params
   const [text, setText] = useState('');
   const [name] = useState("David");
   const [mode] = useState("MtF");
   const names_stringify = female_names['names'];
-  const names = names_stringify.filter((name) => name.startsWith("A"));
+  // let title = params["letter"];
+  // const names = names_stringify.filter((name) => name.startsWith(title));
+  let title = "";
+  let names = [];
+  console.log(params);
+  if (params["similar"]) {
+    names = [];
+    title = "All";
+  } else {
+    title = params["letter"];
+    names = names_stringify.filter((name) => name.startsWith(title)).sort();
+  }
 
   return (
     <View style={styles.container}>
       <SectionList 
         sections={[
-          {title: 'A', data: names},
+          {title: title, data: names},
         ]}
         renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
         renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
         keyExtractor={(item, index) => index}
       />
-      <TextInput
+      {/* <TextInput
         style={styles.search}
         placeholder="Search Here"
         onChangeText={text => setText(text)}
-      />
+      /> */}
       <StatusBar style="auto"/>
       <Sorting name={name} mode={mode}/>
 

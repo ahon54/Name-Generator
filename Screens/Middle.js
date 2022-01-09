@@ -2,25 +2,26 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-const Middle = ({navigation}) => {
+const Middle = ({navigation, route}) => {
+  const params = route.params;
   const handleAll = () => {
-    navigation.navigate('LetterSelection')
+    navigation.navigate('LetterSelection', params)
   };
 
   const handleSimilar = () => {
-    navigation.navigate('Names')
+    navigation.navigate('Names', {similar: true, params})
   };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity
       style={styles.button}
-      onPress={() => navigation.navigate('LetterSelection')}>
+      onPress={() => handleAll()}>
         <Text style={styles.title}>List of All Names </Text>
       </TouchableOpacity>
       <TouchableOpacity
       style={styles.button}
-      onPress={() => navigation.navigate('Names')}>
+      onPress={() => handleSimilar()}>
         <Text style={styles.title}>Search by Name Similarity </Text>
       </TouchableOpacity>
       <StatusBar style="auto"/>

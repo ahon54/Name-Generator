@@ -4,10 +4,10 @@ import { StyleSheet, Text, View, TouchableOpacity, Button, SafeAreaView, ScrollV
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const LetterSelection = ({ navigation }) => {
-
-    const [text, onChangeText] = React.useState("");
-
+const LetterSelection = ({ navigation, route }) => {
+  const [text, onChangeText] = React.useState("");
+  const mode = route.params["mode"];
+  const props = {navigation, mode}
   return (
     <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -17,123 +17,34 @@ const LetterSelection = ({ navigation }) => {
       <SafeAreaView style={styles.safeAreaContainer}>
       <ScrollView style={styles.scrollView}>  
       <View style={styles.innerContainer}>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> A </Text>
-      </TouchableOpacity>
-      
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> B </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> C </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> D </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> E </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> F </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> G </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> H </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> I </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> J </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> K </Text>
-      </TouchableOpacity>
-      
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> L </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> M </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> N </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> O </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> P </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> Q </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> R </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> S </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> T </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> U </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> V </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> W </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> X </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> Y </Text>
-      </TouchableOpacity>
-      
-      <TouchableOpacity style={styles.button}>
-       <Text style={styles.title}> Z </Text>
-      </TouchableOpacity>
-
+        <LetterList {... props}/>
       </View>
       </ScrollView>
-      <TextInput
+      {/* <TextInput
         style={styles.input}
         onChangeText={onChangeText}
         value={text}
         placeholder="Search Here"
-      />
+      /> */}
       </SafeAreaView>
     </KeyboardAvoidingView>
     
   );
+}
+
+function LetterList(props) {
+  const mode = props.mode;
+  const navigation = props.navigation;
+  const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  const listItems = letters.map((letter) =>
+    <TouchableOpacity key={letter}
+      style={styles.button}
+      onPress={() => navigation.navigate('Names', {similar: false, letter: letter, mode})}>
+        <Text style={styles.title}> {letter} </Text>
+    </TouchableOpacity>
+  );
+
+  return (listItems);
 }
 
 const styles = StyleSheet.create({
