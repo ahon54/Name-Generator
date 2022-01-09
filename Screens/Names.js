@@ -7,25 +7,22 @@ import female_names from '../data/girl_names_2018.json';
 
 
 const Names = ({ navigation, route }) => {
-  console.log(route);
   const params = route.params
   const [text, setText] = useState('');
-  const [name] = useState("David");
-  const [mode] = useState("MtF");
+  // const [name] = useState("David");
+  // const [mode] = useState("MtF");
+  // const name = params["name"]
+  // const mode = params["mode"]
   const names_stringify = female_names['names'];
-  // let title = params["letter"];
-  // const names = names_stringify.filter((name) => name.startsWith(title));
   let title = "";
   let names = [];
-  console.log(params);
   if (params["similar"]) {
-    names = [];
+    names = Sorting(params);
     title = "All";
   } else {
     title = params["letter"];
     names = names_stringify.filter((name) => name.startsWith(title)).sort();
   }
-
   return (
     <View style={styles.container}>
       <SectionList 
@@ -42,7 +39,7 @@ const Names = ({ navigation, route }) => {
         onChangeText={text => setText(text)}
       /> */}
       <StatusBar style="auto"/>
-      <Sorting name={name} mode={mode}/>
+      {/* <Sorting name={name} mode={mode}/> */}
 
     </View>
   );
