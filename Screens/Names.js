@@ -17,6 +17,7 @@ const Names = ({ navigation, route }) => {
   let title = "";
   let names = [];
   if (params["similar"]) {
+    console.log(params);
     names = Sorting(params);
     title = "All";
   } else {

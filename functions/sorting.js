@@ -2,6 +2,7 @@ import boy_names from '../data/boy_names_2018.json';
 import girl_names from '../data/girl_names_2018.json';
 import boy_phonetics from '../data/boy_phonetics_2018.json';
 import girl_phonetics from '../data/girl_phonetics_2018.json';
+import { metaphone } from 'metaphone';
 import React from 'react';
 import { Button } from 'react-native';
 
@@ -42,12 +43,21 @@ function difference(str1, str2) {
 export default function Sorting(props) {
     // console.log(props);
     const mode = props['mode'];
-    const name = props['name'];
+    let name = props['name'];
+    console.log(mode);
+    console.log(name);
+    name = name.charAt(0).toUpperCase() + name.slice(1);
+    let result = [];
     if (mode == 'MtF') {
         
         const isGivenName = (element) => element === name;
         let phonetic_index = boy_names['names'].findIndex(isGivenName);
-        let phonetic = boy_phonetics[phonetic_index];
+        let phonetic;
+        if (phonetic_index != -1) {
+            phonetic = boy_phonetics[phonetic_index];
+        } else {
+            phonetic = metaphone(name);
+        }
         let arr = girl_phonetics.slice();
         arr.sort(function(a, b) {
             let a_diff = difference(phonetic, a);
@@ -61,7 +71,7 @@ export default function Sorting(props) {
             }
         });
         
-        let result = [];
+        // let result = [];
         let copy = girl_phonetics.slice();
         let i = 0;
         // let isGivenCurr = (element) => element === arr[0];
@@ -87,7 +97,12 @@ export default function Sorting(props) {
     } else {
         const isGivenName = (element) => element === name;
         let phonetic_index = girl_names['names'].findIndex(isGivenName);
-        let phonetic = girl_phonetics[phonetic_index];
+        let phonetic;
+        if (phonetic_index != -1) {
+            phonetic = girl_phonetics[phonetic_index];
+        } else {
+            phonetic = metaphone(name);
+        }
         let arr = boy_phonetics.slice();
         arr.sort(function(a, b) {
             let a_diff = difference(phonetic, a);
@@ -101,7 +116,7 @@ export default function Sorting(props) {
             }
         });
         
-        let result = [];
+        // let result = [];
         let copy = boy_phonetics.slice();
         let i = 0;
         // let isGivenCurr = (element) => element === arr[0];
@@ -124,6 +139,6 @@ export default function Sorting(props) {
         result = result.slice(0, 10);
         console.log(result);
     }
-    return null
+    return result;
 }
 
