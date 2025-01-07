@@ -1,6 +1,6 @@
 # Trans Name Generator React App
 
-(README copied from develop branch, which is where the latest version of the app is)
+#### (README copied from develop branch, which is where the latest version of the app is)
 
 This is a React app made for a hackathon. 
 The concept is for people transitioning from male to female or vice versa to provide name suggestions for them that are phonetically similar.
