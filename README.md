@@ -1,4 +1,4 @@
-Trans Name Generator React App
+# Trans Name Generator React App
 
 This is a React app made for a hackathon. 
 The concept is for people transitioning from male to female or vice versa to provide name suggestions for them that are phonetically similar.
