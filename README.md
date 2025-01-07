@@ -2,7 +2,7 @@
 
 This is a React app made for a hackathon. 
 The concept is for people transitioning from male to female or vice versa to provide name suggestions for them that are phonetically similar.
-Name suggestions are found comparing the user input name and a list of names with levenshtein distance.
+Name suggestions are found comparing the user input name and a list of names with levenshtein distance (difference in two words by counting the minimum number of changes to turn one word to the other).
 
 Another update to be done would be an additional option to choose gender neutral names as a more generalist choice, since gender is not that straightforward for 2 ways.
 
